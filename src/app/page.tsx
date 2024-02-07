@@ -6,6 +6,7 @@ import { Reputation } from "../components/sections/Reputation";
 import { RoadMap } from "../components/sections/RoadMap";
 import { Testimonial } from "../components/sections/Testimonial";
 import { TrustedBy } from "../components/sections/TrustedBy";
+import { WhereToMeet } from "../components/sections/WhereToMeet";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <RoadMap />
       <Testimonial />
       <FAQ />
+      <WhereToMeet />
     </main>
   );
 }

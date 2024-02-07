@@ -7,37 +7,38 @@ import { FAQAccordion } from "../ui/FAQAccordion";
 import Image from "next/image";
 import { Blob } from "../styles/Blob.styled";
 
-export const FAQ = () => {
-  const FAQContainer = styled(PaddedContainer)`
+const FAQContainer = styled(PaddedContainer)`
+  position: relative;
+`;
+
+const DesktopImageContainer = styled.div`
+  display: none;
+  @media screen and (min-width: 764px) {
+    display: block;
     position: relative;
-  `;
+    aspect-ratio: 119/172;
 
-  const DesktopImageContainer = styled.div`
-    display: none;
-    @media screen and (min-width: 764px) {
-      display: block;
-      position: relative;
-      aspect-ratio: 119/172;
-
-      & > img {
-        object-fit: cover;
-      }
+    & > img {
+      object-fit: cover;
     }
-  `;
+  }
+`;
 
-  const Grid = styled.div`
-    @media screen and (min-width: 764px) {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12.5rem;
-    }
-  `;
+const Grid = styled.div`
+  @media screen and (min-width: 764px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12.5rem;
+  }
+`;
 
-  const FAQBlob = styled(Blob)`
-    height: 120%;
-    top: -0%;
-    left: -70%;
-  `;
+const FAQBlob = styled(Blob)`
+  height: 120%;
+  top: -0%;
+  left: -70%;
+`;
+
+export const FAQ = () => {
   return (
     <section>
       <FAQContainer>
