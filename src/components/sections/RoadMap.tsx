@@ -1,18 +1,11 @@
 "use client";
 
 import styled from "styled-components";
-import { Container, Flex } from "../styles/Container.styled";
+import { Container, Flex, PaddedContainer } from "../styles/Container.styled";
 import { Heading } from "../styles/Heading.styled";
 import { roadMapData } from "../../lib/data";
 import { RoadMapBlock } from "../ui/RoadMapBlock";
 import { RedButton } from "../styles/Button.styled";
-
-const RoadMapContainer = styled(Container)`
-  padding-block: 3.44rem;
-  @media screen and (min-width: 764px) {
-    padding-block: 7.5rem;
-  }
-`;
 
 const BorderFlex = styled(Flex)`
   position: relative;
@@ -35,7 +28,7 @@ const BorderFlex = styled(Flex)`
 export const RoadMap = () => {
   return (
     <section>
-      <RoadMapContainer>
+      <PaddedContainer>
         <Flex $desktopGap="6.25rem" $mobileGap="1.88rem" $alignItems="center">
           <Heading>Being a partner with us is easy</Heading>
           <BorderFlex $mobileGap="2rem">
@@ -45,7 +38,7 @@ export const RoadMap = () => {
           </BorderFlex>
           <RedButton>Become an affiliate</RedButton>
         </Flex>
-      </RoadMapContainer>
+      </PaddedContainer>
     </section>
   );
 };

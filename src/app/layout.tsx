@@ -5,7 +5,10 @@ import { Header } from "../components/layout/Header";
 import { Footer } from "../components/layout/Footer";
 import { GlobalStylesProvider } from "../components/providers/GlobalStylesProvider";
 
-const EncodeSans = Encode_Sans({ subsets: ["latin"] });
+const EncodeSans = Encode_Sans({
+  subsets: ["latin"],
+  variable: "--font-encode-sans",
+});
 
 const EncodeSC = Encode_Sans_SC({
   subsets: ["latin"],

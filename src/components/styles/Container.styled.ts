@@ -17,6 +17,13 @@ export const Container = styled.div`
   }
 `;
 
+export const PaddedContainer = styled(Container)`
+  padding-block: 3.44rem;
+  @media screen and (min-width: 764px) {
+    padding-block: 7.5rem;
+  }
+`;
+
 export const Flex = styled.div<{
   $mobHidden?: boolean;
   $row?: boolean;

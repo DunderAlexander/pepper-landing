@@ -1,21 +1,13 @@
 "use client";
 
 import styled from "styled-components";
-import { Container, Flex } from "../styles/Container.styled";
+import { Container, Flex, PaddedContainer } from "../styles/Container.styled";
 import GeoLogo from "/public/geo.svg";
 import RoiLogo from "/public/roi.svg";
 import { Description } from "../styles/Description.styled";
 import { LogoBox } from "../styles/LogoBox.styled";
 import { Heading } from "../styles/Heading.styled";
 import { PicturesContainer } from "../styles/PicturesContainer.styled";
-
-const OffersContainer = styled(Container)`
-  padding-block: 3.44rem;
-
-  @media screen and (min-width: 764px) {
-    padding-block: 7.5rem;
-  }
-`;
 
 const Break = styled.div`
   height: 1.5px;
@@ -83,7 +75,7 @@ const OffersPicContainer = styled(PicturesContainer)`
 export const ExclusiveOffers = () => {
   return (
     <section>
-      <OffersContainer>
+      <PaddedContainer>
         <MainContainer>
           <FlexWithBreak $mobileGap="1.25rem" $desktopGap="2.94rem">
             <Heading>More than 2000 exclusive offers</Heading>
@@ -103,7 +95,7 @@ export const ExclusiveOffers = () => {
             </LogoBoxOffers>
           </OffersPicContainer>
         </MainContainer>
-      </OffersContainer>
+      </PaddedContainer>
     </section>
   );
 };

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Container, Flex } from "../styles/Container.styled";
+import { Container, Flex, PaddedContainer } from "../styles/Container.styled";
 import { Description } from "../styles/Description.styled";
 import { Heading } from "../styles/Heading.styled";
 import styled from "styled-components";
@@ -11,14 +11,6 @@ import ReliableDataIcon from "/public/reliable-data.svg";
 import FastSupportIcon from "/public/fast-support.svg";
 import MobileTrafficIcon from "/public/mobile-traffic.svg";
 import { Button, RedButton } from "../styles/Button.styled";
-
-const ExpertiseContainer = styled(Container)`
-  padding-block: 3.44rem;
-
-  @media screen and (min-width: 764px) {
-    padding-block: 7.5rem;
-  }
-`;
 
 const ExpertiseImageBox = styled.div`
   position: relative;
@@ -72,7 +64,7 @@ const PicWithPoints = styled(Flex)`
 export const OurExpertise = () => {
   return (
     <section>
-      <ExpertiseContainer>
+      <PaddedContainer>
         <Flex
           $mobileGap="1.25rem"
           $justifyContent="center"
@@ -126,7 +118,7 @@ export const OurExpertise = () => {
             </Flex>
           </PicWithPoints>
         </Flex>
-      </ExpertiseContainer>
+      </PaddedContainer>
     </section>
   );
 };

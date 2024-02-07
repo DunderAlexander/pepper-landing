@@ -1,6 +1,6 @@
 "use client";
 
-import { Container, Flex } from "../styles/Container.styled";
+import { Flex, PaddedContainer } from "../styles/Container.styled";
 import { Heading } from "../styles/Heading.styled";
 import { ShadowCard } from "../styles/ShadowCard.styled";
 
@@ -8,13 +8,6 @@ import GmgIcon from "/public/gmg.svg";
 import TraficAgencyIcon from "/public/traffic-agency.svg";
 import TraffbrazaIcon from "/public/traffbraza.svg";
 import styled from "styled-components";
-
-const TrustedContainer = styled(Container)`
-  padding-block: 3.44rem;
-  @media screen and (min-width: 764px) {
-    padding-block: 7.5rem;
-  }
-`;
 
 const LogoWithBorder = styled.div`
   position: relative;
@@ -37,7 +30,7 @@ const LogoWithBorder = styled.div`
 export const TrustedBy = () => {
   return (
     <section>
-      <TrustedContainer>
+      <PaddedContainer>
         <ShadowCard>
           <Flex $mobileGap="2.5rem">
             <Heading>Trusted By</Heading>
@@ -54,7 +47,7 @@ export const TrustedBy = () => {
             </Flex>
           </Flex>
         </ShadowCard>
-      </TrustedContainer>
+      </PaddedContainer>
     </section>
   );
 };

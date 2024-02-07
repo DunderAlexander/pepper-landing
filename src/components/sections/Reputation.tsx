@@ -1,7 +1,7 @@
 "use client";
 
 import styled from "styled-components";
-import { Container, Flex } from "../styles/Container.styled";
+import { Container, Flex, PaddedContainer } from "../styles/Container.styled";
 import { Description } from "../styles/Description.styled";
 import { Heading } from "../styles/Heading.styled";
 import { LogoBox } from "../styles/LogoBox.styled";
@@ -10,14 +10,6 @@ import { PicturesContainer } from "../styles/PicturesContainer.styled";
 import DollarIcon from "/public/pepper-dollar.svg";
 import PercentIcon from "/public/pepper-percent.svg";
 import { ShadowCard } from "../styles/ShadowCard.styled";
-
-const RepContainer = styled(Container)`
-  padding-block: 3.44rem;
-
-  @media screen and (min-width: 764px) {
-    padding-block: 7.5rem;
-  }
-`;
 
 const RepLogoBox = styled(LogoBox)`
   @media screen and (min-width: 764px) {
@@ -31,7 +23,7 @@ const RepLogoBox = styled(LogoBox)`
 export const Reputation = () => {
   return (
     <section>
-      <RepContainer>
+      <PaddedContainer>
         <ShadowCard>
           <Flex $mobileGap="2.06rem" $desktopGap="6.75rem">
             <Flex $mobileGap="0.94rem" $desktopGap="3.06rem">
@@ -53,7 +45,7 @@ export const Reputation = () => {
             </PicturesContainer>
           </Flex>
         </ShadowCard>
-      </RepContainer>
+      </PaddedContainer>
     </section>
   );
 };

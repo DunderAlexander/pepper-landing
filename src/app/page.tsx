@@ -1,4 +1,5 @@
 import { ExclusiveOffers } from "../components/sections/ExclusiveOffers";
+import { FAQ } from "../components/sections/FAQ";
 import { Hero } from "../components/sections/Hero";
 import { OurExpertise } from "../components/sections/OurExpertise";
 import { Reputation } from "../components/sections/Reputation";
@@ -16,6 +17,7 @@ export default function Home() {
       <TrustedBy />
       <RoadMap />
       <Testimonial />
+      <FAQ />
     </main>
   );
 }
