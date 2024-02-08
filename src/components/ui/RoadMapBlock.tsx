@@ -47,6 +47,7 @@ const RoadMapText = styled.div`
 `;
 
 const FilledIcon = styled(BlankIcon)`
+  fill: white;
   width: 1.23794rem;
   height: 1.53781rem;
 
