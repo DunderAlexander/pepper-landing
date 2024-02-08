@@ -26,7 +26,6 @@ const PartnerCardStyled = styled(ShadowCard)`
 const TestimonialCardIcon = styled(BlankIcon)`
   width: 1.78081rem;
   height: 2.21219rem;
-  fill: white;
 
   @media screen and (min-width: 764px) {
     width: 2.15663rem;

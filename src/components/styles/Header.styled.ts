@@ -119,7 +119,6 @@ export const BurgerMenu = styled(Container)<{ $isOpen: boolean }>`
 `;
 
 export const ButtonLanguages = styled(Button)`
-  background: transparent;
   display: flex;
   align-items: center;
   gap: 1rem;
