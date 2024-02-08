@@ -60,3 +60,33 @@ export const FAQContent = [
     text: "text3",
   },
 ];
+
+export const ourTeamData = [
+  {
+    title: "CEO",
+    name: "Polonuer Lev",
+    email: "Polonuer@pepper.partners",
+    linkedIn:
+      "https://www.linkedin.com/in/lev-polonuer-873a8375?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    photo: "",
+    description: "10 years in arbitrage traffic",
+  },
+  {
+    title: "Head of Business Development",
+    name: "Agnieszka Lisiecka",
+    email: "Lisiecka@pepper.partners",
+    linkedIn:
+      "https://www.linkedin.com/in/agnieszka-lisiecka-70b06353?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    photo: "",
+    description: "17 years in development and technology",
+  },
+  {
+    title: "Head of Sales Department",
+    name: "Salem Daniel",
+    email: "Salem@pepper.partners",
+    linkedIn:
+      "https://www.linkedin.com/in/daniel-salem-ahmed-omer-100727193?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    photo: "",
+    description: "10 years in marketing and technology",
+  },
+];

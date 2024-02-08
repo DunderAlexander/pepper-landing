@@ -1,25 +1,24 @@
 "use client";
 
-import { Flex, PaddedContainer } from "../styles/Container.styled";
-import { Heading } from "../styles/Heading.styled";
-
-import { testimonialData } from "../../lib/data";
-import { PartnerCard } from "../ui/PartnerCard";
 import useEmblaCarousel from "embla-carousel-react";
+import { Flex, PaddedContainer } from "../styles/Container.styled";
 import { CardContainer, Embla } from "../styles/Embla.styled";
+import { Heading } from "../styles/Heading.styled";
+import { PartnerCard } from "../ui/PartnerCard";
+import { ourTeamData, testimonialData } from "../../lib/data";
+import { PerformanceTeamCard } from "../ui/PerformanceTeamCard";
 
-export const Testimonial = () => {
+export const OurTeam = () => {
   const [ref] = useEmblaCarousel();
-
   return (
     <section>
       <PaddedContainer>
         <Flex $mobileGap="4.25rem" $desktopGap="6.25rem">
-          <Heading>What our partners & industry leaders say</Heading>
+          <Heading>Meet your performance team!</Heading>
           <Embla ref={ref}>
             <CardContainer>
-              {testimonialData.map((item, idx) => (
-                <PartnerCard key={idx} {...item} />
+              {ourTeamData.map((item, idx) => (
+                <PerformanceTeamCard key={idx} {...item} />
               ))}
             </CardContainer>
           </Embla>

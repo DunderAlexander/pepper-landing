@@ -1,6 +1,6 @@
-"use client";
+'use client'
 
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
 * {
@@ -21,12 +21,15 @@ a {
   color: inherit;
   text-decoration: inherit;
 }
-`;
+strong {
+  font-weight:900;
+}
+`
 export const GlobalStylesProvider = ({ children }) => {
-  return (
-    <>
-      <GlobalStyles />
-      {children}
-    </>
-  );
-};
+	return (
+		<>
+			<GlobalStyles />
+			{children}
+		</>
+	)
+}
