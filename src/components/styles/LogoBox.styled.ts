@@ -1,3 +1,4 @@
+import { device } from "@/src/lib/mediaQueries";
 import styled from "styled-components";
 
 export const LogoBox = styled.div`
@@ -21,7 +22,7 @@ export const LogoBox = styled.div`
   &:last-child > svg {
     max-width: 9.2rem; */
   /* } */
-  @media screen and (min-width: 764px) {
+  @media ${device.md} {
     svg {
       max-width: initial;
     }

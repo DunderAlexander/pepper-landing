@@ -1,14 +1,19 @@
 import styled from "styled-components";
 import { Container } from "./Container.styled";
+import { device } from "@/src/lib/mediaQueries";
+import { Blob } from "./Blob.styled";
 
-export const FooterStyled = styled.footer``;
+export const FooterStyled = styled.footer`
+  position: relative;
+  overflow: hidden;
+`;
 
 export const FooterContainer = styled(Container)`
   display: flex;
   flex-direction: column;
   gap: 2rem;
   padding-block: 3.44rem;
-  @media screen and (min-width: 764px) {
+  @media ${device.md} {
     gap: 6.19rem;
   }
 `;
@@ -16,6 +21,8 @@ export const FooterContainer = styled(Container)`
 export const PrivacyContainer = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   gap: 2rem;
 
   p {
@@ -27,17 +34,21 @@ export const PrivacyContainer = styled.div`
     max-width: 13.3125rem;
   }
 
-  p:first-child {
-    order: 1;
+  span:first-child {
+    font-weight: 700;
+    font-size: 0.625rem;
+    /* order: 1; */
   }
-  p:last-child {
-    order: 2;
+  span:last-child {
+    font-size: 0.625rem;
+    /* order: 2; */
   }
-  @media screen and (min-width: 764px) {
+  @media ${device.md} {
     gap: 0;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    text-align: left;
     p {
       max-width: max-content;
       color: var(--White, #fff);
@@ -46,11 +57,15 @@ export const PrivacyContainer = styled.div`
       font-weight: 500;
       line-height: normal;
     }
-    p:first-child {
-      order: 2;
+    span:first-child {
+      font-weight: 600;
+      font-size: 1.32775rem;
+      /* order: 2; */
     }
-    p:last-child {
-      order: 1;
+    span:last-child {
+      font-weight: 600;
+      font-size: 1.32775rem;
+      /* order: 1; */
     }
   }
 `;
@@ -71,7 +86,7 @@ export const LinksContainer = styled.div`
     font-weight: 500;
     line-height: normal;
   }
-  @media screen and (min-width: 764px) {
+  @media ${device.md} {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -91,7 +106,7 @@ export const MainContainer = styled.div`
   flex-direction: column;
   gap: 2rem;
 
-  @media screen and (min-width: 764px) {
+  @media ${device.md} {
     flex-direction: row;
     justify-content: space-between;
     align-items: start;
@@ -101,8 +116,7 @@ export const MainContainer = styled.div`
 
 export const InfoContainer = styled.div`
   display: grid;
-  grid-template-columns: 60% 40%;
-  @media screen and (min-width: 764px) {
+  @media ${device.md} {
     display: flex;
     flex-direction: row;
   }
@@ -117,7 +131,7 @@ export const SocialsContainer = styled.div`
     height: 1rem;
   }
 
-  @media screen and (min-width: 764px) {
+  @media ${device.md} {
     svg {
       width: 1.4375rem;
       height: 1.5rem;
@@ -144,67 +158,38 @@ export const Office = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  & > div:first-child {
-    display: flex;
-    flex-direction: column;
-    gap: 0.31rem;
-  }
-  & > div:last-child {
-    display: flex;
-    flex-direction: column;
-    gap: 0.88rem;
-  }
 
-  @media screen and (min-width: 764px) {
+  @media ${device.md} {
     display: none;
   }
 `;
 
 export const Contact = styled.div`
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: normal;
   h2 {
     color: var(--White, #fff);
     font-size: 0.9375rem;
-    font-style: normal;
     font-weight: 500;
     line-height: normal;
-    text-transform: uppercase;
   }
-  p,
+
   a {
-    color: var(--White, #fff);
+    display: block;
     font-size: 0.625rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
   }
-  h4 {
-    color: white;
-    font-size: 0.625rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-  }
+
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  & > div:first-child {
-    display: flex;
-    flex-direction: column;
-    gap: 0.31rem;
-  }
-  & > div:last-child {
-    display: flex;
-    flex-direction: column;
-    gap: 0.88rem;
-  }
-  @media screen and (min-width: 764px) {
+  @media ${device.md} {
     h2 {
       color: var(--White, #fff);
       font-size: 2.5rem;
       font-style: normal;
       font-weight: 500;
       line-height: normal;
-      text-transform: uppercase;
     }
     p,
     a {
@@ -223,4 +208,8 @@ export const Contact = styled.div`
     }
     gap: 2.5rem;
   }
+`;
+
+export const FooterBlob = styled(Blob)`
+  top: 50%;
 `;

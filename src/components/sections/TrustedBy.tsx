@@ -8,14 +8,19 @@ import GmgIcon from "/public/gmg.svg";
 import TraficAgencyIcon from "/public/traffic-agency.svg";
 import TraffbrazaIcon from "/public/traffbraza.svg";
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
+import { device } from "@/src/lib/mediaQueries";
+import Image from "next/image";
 
 const LogoWithBorder = styled.div`
   position: relative;
   width: 100%;
-  @media screen and (min-width: 764px) {
+  aspect-ratio: 368/82;
+  @media ${device.md} {
     &:not(:last-child)::after {
       content: "";
       position: absolute;
+      right: 0;
       height: 100%;
       width: 1.5px;
       background: linear-gradient(
@@ -27,15 +32,26 @@ const LogoWithBorder = styled.div`
   }
 `;
 
-export const TrustedBy = () => {
+const LogoImage = styled(Image)`
+  object-fit: contain;
+`;
+
+export const TrustedBy = ({ logos }: { logos: any[] }) => {
+  const { t } = useTranslation();
+
   return (
     <section>
       <PaddedContainer>
         <ShadowCard>
           <Flex $mobileGap="2.5rem">
-            <Heading>Trusted By</Heading>
+            <Heading>{t("default:TrustedBy_title")}</Heading>
             <Flex $row $desktopGap="2rem">
-              <LogoWithBorder>
+              {logos.map((logoSrc, idx) => (
+                <LogoWithBorder key={idx}>
+                  <LogoImage src={logoSrc} alt="logo" fill={true} />
+                </LogoWithBorder>
+              ))}
+              {/* <LogoWithBorder>
                 <TraficAgencyIcon />
               </LogoWithBorder>
               <LogoWithBorder>
@@ -43,7 +59,7 @@ export const TrustedBy = () => {
               </LogoWithBorder>
               <LogoWithBorder>
                 <TraffbrazaIcon />
-              </LogoWithBorder>
+              </LogoWithBorder> */}
             </Flex>
           </Flex>
         </ShadowCard>

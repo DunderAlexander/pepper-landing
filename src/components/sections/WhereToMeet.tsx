@@ -1,7 +1,7 @@
 "use client";
 
 import styled from "styled-components";
-import { Flex, PaddedContainer } from "../styles/Container.styled";
+import { Flex, Grid, PaddedContainer } from "../styles/Container.styled";
 import { RedButton } from "../styles/Button.styled";
 import { Embla } from "../styles/Embla.styled";
 import useEmblaCarousel from "embla-carousel-react";
@@ -9,6 +9,8 @@ import { useDotButton } from "../../useDotButton";
 import { Heading } from "../styles/Heading.styled";
 
 import BlankIcon from "/public/blank-pepper.svg";
+import { useTranslation } from "react-i18next";
+import { device } from "@/src/lib/mediaQueries";
 
 const EventCard = styled.div`
   display: flex;
@@ -20,7 +22,7 @@ const EventCard = styled.div`
   flex: 0 0 70%;
   min-width: 0;
 
-  @media screen and (min-width: 764px) {
+  @media ${device.md} {
     gap: 2.25rem;
     padding: 2.12rem 1.62rem;
     border-radius: 1.25rem;
@@ -35,7 +37,7 @@ const Upcoming = styled.h2`
 
   color: #ed1c24;
 
-  @media screen and (min-width: 764px) {
+  @media ${device.md} {
     font-family: var(--font-encode-sans);
     font-size: 1.875rem;
   }
@@ -47,7 +49,7 @@ const Title = styled.h1`
   font-size: 0.9375rem;
   font-weight: 700;
 
-  @media screen and (min-width: 764px) {
+  @media ${device.md} {
     font-size: 5rem;
   }
 `;
@@ -59,7 +61,7 @@ const EventLocation = styled.p`
   font-weight: 500;
   text-transform: uppercase;
 
-  @media screen and (min-width: 764px) {
+  @media ${device.md} {
     font-size: 2.5rem;
   }
 `;
@@ -68,7 +70,7 @@ const EventDate = styled.p`
   font-size: 0.625rem;
   font-weight: 500;
 
-  @media screen and (min-width: 764px) {
+  @media ${device.md} {
     font-size: 1.875rem;
   }
 `;
@@ -76,7 +78,7 @@ const EventDate = styled.p`
 const FindOutMoreButton = styled(RedButton)`
   padding: 0.3rem 0.5rem;
 
-  @media screen and (min-width: 764px) {
+  @media ${device.md} {
     padding: 1.5rem 3.75rem;
   }
 `;
@@ -98,7 +100,7 @@ const ButtonsContainer = styled.div<{ $isLastSelected?: boolean }>`
         : "white"};
   }
 
-  @media screen and (min-width: 764px) {
+  @media ${device.md} {
     &::after {
       height: 3px;
     }
@@ -119,10 +121,11 @@ const CardDotButton = styled.button<{ $isLit?: boolean }>`
       $isLit ? "linear-gradient(45deg, #ED1C24 40%, white 100%)" : "white"};
   }
   & svg {
+    color: ${({ $isLit }) => ($isLit ? "#ED1C24" : "white")};
     fill: ${({ $isLit }) => ($isLit ? "#ED1C24" : "white")};
   }
 
-  @media screen and (min-width: 764px) {
+  @media ${device.md} {
     &::before {
       height: 3px;
     }
@@ -133,7 +136,7 @@ const Indicator = styled.div`
   width: 0.86038rem;
   height: 1.06881rem;
 
-  @media screen and (min-width: 764px) {
+  @media ${device.md} {
     width: 2.15663rem;
     height: 2.67906rem;
   }
@@ -143,26 +146,35 @@ const EventCardComponent = ({
   title,
   location,
   date,
+  link,
   upcoming,
 }: {
   title: string;
   location: string;
   date: string;
+  link: string;
   upcoming?: string;
-}) => (
-  <EventCard>
-    <Upcoming>{upcoming ? upcoming : "-"}</Upcoming>
-    <Title>{title}</Title>
-    <EventLocation>{location}</EventLocation>
-    <Flex $row $alignItems="center" $justifyContent="space-between">
-      <EventDate>{date}</EventDate>
-      <FindOutMoreButton>Find out more</FindOutMoreButton>
-    </Flex>
-  </EventCard>
-);
+}) => {
+  const { t } = useTranslation();
+
+  return (
+    <EventCard>
+      <Upcoming>{upcoming ? upcoming : "-"}</Upcoming>
+      <Title>{title}</Title>
+      <EventLocation>{location}</EventLocation>
+      <Flex $row $alignItems="center" $justifyContent="space-between">
+        <EventDate>{date}</EventDate>
+        <FindOutMoreButton href={link}>
+          {t("WhereToMeet_slide_button")}
+        </FindOutMoreButton>
+      </Flex>
+    </EventCard>
+  );
+};
 
 export const WhereToMeet = () => {
   const [ref, emblaApi] = useEmblaCarousel();
+  const { t } = useTranslation();
 
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
     useDotButton(emblaApi);
@@ -171,31 +183,33 @@ export const WhereToMeet = () => {
     <section>
       <PaddedContainer>
         <Flex $mobileGap="2.44rem" $desktopGap="6.25rem">
-          <Heading>Where to meet us</Heading>
+          <Heading>{t("WhereToMeet_title")}</Heading>
           <Embla ref={ref}>
-            <Flex
-              $row
-              $alignItems="center"
+            <Grid
+              $mobileCols="repeat(3, max-content)"
               $mobileGap="1.28rem"
               $desktopGap="4.36rem"
             >
               <EventCardComponent
-                upcoming="upcoming event"
-                title="SIGMA Europe"
-                location="MALTA, MFCC"
-                date="13-17 Nov 2023"
+                link="https://kinza360.com/"
+                upcoming={t("WhereToMeet_slide_text")}
+                title={t("WhereToMeet_slide_title-1")}
+                location={t("WhereToMeet_slide_place-1")}
+                date={t("WhereToMeet_slide_date-1")}
               />
               <EventCardComponent
-                title="AW"
-                location="THAILAND, BANGKOK"
-                date="07-08 Dec 2023"
+                link="https://sigma.world"
+                title={t("WhereToMeet_slide_title-2")}
+                location={t("WhereToMeet_slide_place-2")}
+                date={t("WhereToMeet_slide_date-2")}
               />
               <EventCardComponent
-                title="Sigma Eurasia"
-                location="UAE, Dubai"
-                date="13-16 Mar 2024"
+                link="https://london.igbaffiliate.com/"
+                title={t("WhereToMeet_slide_title-3")}
+                location={t("WhereToMeet_slide_place-3")}
+                date={t("WhereToMeet_slide_date-3")}
               />
-            </Flex>
+            </Grid>
           </Embla>
           <ButtonsContainer
             $isLastSelected={selectedIndex === scrollSnaps.length - 1}

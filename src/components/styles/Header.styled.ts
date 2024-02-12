@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Container } from "./Container.styled";
 import { Button } from "./Button.styled";
+import { device } from "@/src/lib/mediaQueries";
 
 export const HeaderStyled = styled.header`
   position: relative;
@@ -9,7 +10,7 @@ export const HeaderStyled = styled.header`
   ul {
     display: none;
   }
-  @media screen and (min-width: 764px) {
+  @media ${device.md} {
     padding-block: 4rem;
     ul {
       display: flex;
@@ -40,20 +41,22 @@ export const ButtonContainer = styled.div`
   align-items: center;
   gap: 0.88rem;
 
-  @media screen and (min-width: 764px) {
+  @media ${device.md} {
     gap: 2rem;
   }
 `;
 
 export const BurgerButton = styled.button`
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  @media screen and (min-width: 764px) {
+  @media ${device.md} {
     display: none;
   }
 `;
 
-export const LogoButton = styled.button`
+export const LogoButton = styled.a`
   display: flex;
   align-items: center;
   gap: 0.25rem;
@@ -64,27 +67,38 @@ export const LogoButton = styled.button`
     font-weight: 900;
     line-height: normal;
     letter-spacing: -0.015rem;
+    font-size: 0.75rem;
   }
   svg {
     width: 1.86181rem;
     height: 2.22756rem;
   }
 
-  @media screen and (min-width: 764px) {
+  @media ${device.md} {
     gap: 0.66rem;
+    svg {
+      width: 1.9rem;
+      height: 2.4rem;
+    }
+    p {
+      font-size: 0.9rem;
+      letter-spacing: -0.025rem;
+    }
+  }
+
+  @media ${device.lg} {
     svg {
       width: 2.31006rem;
       height: 3.3125rem;
     }
     p {
       font-size: 1.25rem;
-      letter-spacing: -0.025rem;
     }
   }
 `;
 
 export const BurgerMenu = styled(Container)<{ $isOpen: boolean }>`
-  transform: translateY(${(props) => (props.$isOpen ? "0%" : "-200%")});
+  transform: translateY(${(props) => (props.$isOpen ? "0%" : "-235%")});
   z-index: 1;
   position: absolute;
   transition: all;

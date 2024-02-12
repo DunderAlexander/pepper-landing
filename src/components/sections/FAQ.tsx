@@ -6,6 +6,8 @@ import { Heading } from "../styles/Heading.styled";
 import { FAQAccordion } from "../ui/FAQAccordion";
 import Image from "next/image";
 import { Blob } from "../styles/Blob.styled";
+import { useTranslation } from "react-i18next";
+import { device } from "@/src/lib/mediaQueries";
 
 const FAQContainer = styled(PaddedContainer)`
   position: relative;
@@ -13,7 +15,7 @@ const FAQContainer = styled(PaddedContainer)`
 
 const DesktopImageContainer = styled.div`
   display: none;
-  @media screen and (min-width: 764px) {
+  @media ${device.md} {
     display: block;
     position: relative;
     aspect-ratio: 119/172;
@@ -25,7 +27,7 @@ const DesktopImageContainer = styled.div`
 `;
 
 const Grid = styled.div`
-  @media screen and (min-width: 764px) {
+  @media ${device.md} {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 12.5rem;
@@ -39,12 +41,14 @@ const FAQBlob = styled(Blob)`
 `;
 
 export const FAQ = () => {
+  const { t } = useTranslation();
+
   return (
     <section>
       <FAQContainer>
         <FAQBlob />
         <Flex $mobileGap="1.25rem" $desktopGap="6.25rem">
-          <Heading>Frequently Asked Questions</Heading>
+          <Heading>{t("FAQ_title")}</Heading>
           <Grid>
             <FAQAccordion />
             <DesktopImageContainer>

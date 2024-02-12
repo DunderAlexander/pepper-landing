@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Button } from "./Button.styled";
 import Image from "next/image";
 import { Container } from "./Container.styled";
+import { device } from "@/src/lib/mediaQueries";
 
 export const HeroContainer = styled(Container)`
   position: relative;
@@ -17,6 +18,7 @@ export const HeadingHero = styled.h1`
   font-weight: 700;
   line-height: normal;
   text-transform: uppercase;
+  font-family: var(--font-encode-sans-exp);
 
   padding-bottom: 0.5rem;
 
@@ -24,7 +26,7 @@ export const HeadingHero = styled.h1`
     z-index: -10;
   }
 
-  @media screen and (min-width: 764px) {
+  @media ${device.md} {
     font-size: 5rem;
     padding-bottom: 1rem;
   }
@@ -40,7 +42,7 @@ export const HeroDescription = styled.p`
 
   padding-bottom: 2rem;
 
-  @media screen and (min-width: 764px) {
+  @media ${device.md} {
     font-size: 1.875rem;
     text-transform: initial;
 
@@ -57,7 +59,7 @@ export const HeroButton = styled(Button)`
   font-weight: 500;
   line-height: normal;
 
-  @media screen and (min-width: 764px) {
+  @media ${device.md} {
     font-size: 1.875rem;
     border-radius: 0.62631rem;
     padding: 1.50025rem 3.75063rem;
@@ -88,7 +90,7 @@ export const SecondaryHeading = styled.h2`
 
   max-width: 21.8125rem;
 
-  @media screen and (min-width: 764px) {
+  @media ${device.md} {
     font-size: 2.5rem;
     letter-spacing: 1.15rem;
     max-width: initial;
@@ -96,6 +98,7 @@ export const SecondaryHeading = styled.h2`
 `;
 
 export const AffiliateBox = styled.div`
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: 1fr;
@@ -109,13 +112,14 @@ export const AffiliateBox = styled.div`
   background: var(--Black, #000);
   box-shadow: 0px -19px 39.2px 0px rgba(255, 2, 0, 0.5);
 
-  @media screen and (min-width: 764px) {
+  @media ${device.md} {
     grid-template-columns: 1fr 1fr auto 1fr;
     padding: 0rem 1.75rem;
   }
 `;
 
 export const AffiliateCard = styled.div`
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -127,6 +131,7 @@ export const AffiliateCard = styled.div`
   border-right-style: solid;
 
   h3 {
+    font-family: var(--font-encode-sans-sc);
     text-align: center;
     font-size: 0.9375rem;
     font-style: normal;
@@ -145,7 +150,7 @@ export const AffiliateCard = styled.div`
     border: none;
   }
 
-  @media screen and (min-width: 764px) {
+  @media ${device.md} {
     padding: 1rem 1rem;
     h3 {
       font-size: 1.5rem;
@@ -166,7 +171,7 @@ export const AffiliateCard = styled.div`
   }
 `;
 
-export const FireContainer = styled.div`
+export const BgContainer = styled.div`
   position: absolute;
   z-index: -1;
   width: 100%;
@@ -176,7 +181,11 @@ export const FireContainer = styled.div`
   transform: translate(-50%, -50%);
 `;
 
-export const Fire = styled(Image)`
+export const Background = styled(Image)`
   object-fit: contain;
+  filter: brightness(60%);
+`;
+
+export const Fire = styled(Background)`
   filter: blur(10px) contrast(100%) brightness(70%);
 `;

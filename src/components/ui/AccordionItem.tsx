@@ -2,13 +2,15 @@ import * as Accordion from "@radix-ui/react-accordion";
 import styled from "styled-components";
 
 import Arrow from "/public/arrow-accordion.svg";
+import { useTranslation } from "react-i18next";
+import { device } from "@/src/lib/mediaQueries";
 
 const ItemStyled = styled(Accordion.Item)`
   display: flex;
   flex-direction: column;
   gap: 1.19rem;
 
-  @media screen and (min-width: 764px) {
+  @media ${device.md} {
     gap: 0;
     padding-block: 2.95rem;
     &:not(:last-child) {
@@ -22,6 +24,7 @@ const TriggerStyled = styled(Accordion.Trigger)`
   width: 100%;
   justify-content: space-between;
   align-items: center;
+  text-align: left;
   color: white;
   font-size: 0.9375rem;
   font-weight: 500;
@@ -31,7 +34,7 @@ const TriggerStyled = styled(Accordion.Trigger)`
     transform: rotate(180deg);
   }
 
-  @media screen and (min-width: 764px) {
+  @media ${device.md} {
     font-size: 1.875rem;
   }
 `;
@@ -41,7 +44,7 @@ const ContentStyled = styled(Accordion.Content)`
   font-size: 0.625rem;
   font-weight: 500;
 
-  @media screen and (min-width: 764px) {
+  @media ${device.md} {
     padding-top: 2.95rem;
     font-family: var(--font-encode-sans);
     font-size: 1.25rem;
@@ -53,22 +56,23 @@ const AccArrow = styled(Arrow)`
   width: 1rem;
   height: 1rem;
 
-  @media screen and (min-width: 764px) {
+  @media ${device.md} {
     width: 1.77056rem;
     height: 1.77056rem;
   }
 `;
 
 export const AccordionItem = ({ title, text }) => {
+  const { t } = useTranslation();
   return (
     <ItemStyled value={title}>
       <Accordion.Header>
         <TriggerStyled>
-          {title}
+          {t(title)}
           <AccArrow />
         </TriggerStyled>
       </Accordion.Header>
-      <ContentStyled>{text}</ContentStyled>
+      <ContentStyled>{t(text)}</ContentStyled>
     </ItemStyled>
   );
 };

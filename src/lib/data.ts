@@ -4,89 +4,97 @@ import TraffbrazaIcon from "/public/traffbraza.svg";
 
 export const roadMapData = [
   {
-    title: "Register",
-    description:
-      "Sign up on PepperPartners. Your personal manager will reach out soon",
+    title: "RoadMap_subtitle-1",
+    description: "RoadMap_text-1",
   },
   {
-    title: "Register",
-    description:
-      "Sign up on PepperPartners. Your personal manager will reach out soon",
+    title: "RoadMap_subtitle-2",
+    description: "RoadMap_text-2",
   },
   {
-    title: "Register",
-    description:
-      "Sign up on PepperPartners. Your personal manager will reach out soon",
+    title: "RoadMap_subtitle-3",
+    description: "RoadMap_text-3",
   },
   {
-    title: "Register",
-    description:
-      "Sign up on PepperPartners. Your personal manager will reach out soon",
+    title: "RoadMap_subtitle-4",
+    description: "RoadMap_text-4",
   },
 ];
 
 export const testimonialData = [
   {
-    pFirst: "We've been working with Pepper. Partners for about a year.",
-    pSecond:
-      "During this time, the affiliate program has proven itself in the best possible way: high-quality traffic, fast and friendly support. All disputed issues are resolved very quickly. We are satisfied with the partnership and highly recommend it.",
+    text: "Testimonial_review-1",
+    // pSecond:
+    //   "During this time, the affiliate program has proven itself in the best possible way: high-quality traffic, fast and friendly support. All disputed issues are resolved very quickly. We are satisfied with the partnership and highly recommend it.",
     Logo: TraficAgencyIcon,
   },
   {
-    pFirst: "We've been working with Pepper. Partners for about a year.",
-    pSecond:
-      "During this time, the affiliate program has proven itself in the best possible way: high-quality traffic, fast and friendly support. All disputed issues are resolved very quickly. We are satisfied with the partnership and highly recommend it.",
-    Logo: TraficAgencyIcon,
+    text: "Testimonial_review-2",
+    // pSecond:
+    //   "During this time, the affiliate program has proven itself in the best possible way: high-quality traffic, fast and friendly support. All disputed issues are resolved very quickly. We are satisfied with the partnership and highly recommend it.",
+    Logo: GmgIcon,
   },
   {
-    pFirst: "We've been working with Pepper. Partners for about a year.",
-    pSecond:
-      "During this time, the affiliate program has proven itself in the best possible way: high-quality traffic, fast and friendly support. All disputed issues are resolved very quickly. We are satisfied with the partnership and highly recommend it.",
-    Logo: TraficAgencyIcon,
+    text: "Testimonial_review-3",
+    // pSecond:
+    //   "During this time, the affiliate program has proven itself in the best possible way: high-quality traffic, fast and friendly support. All disputed issues are resolved very quickly. We are satisfied with the partnership and highly recommend it.",
+    Logo: TraffbrazaIcon,
   },
 ];
 
 export const FAQContent = [
   {
-    title: "title1",
-    text: "text1",
+    title: "FAQ_subtitle-1",
+    text: "FAQ_text-1",
   },
   {
-    title: "title2",
-    text: "text2",
+    title: "FAQ_subtitle-2",
+    text: "FAQ_text-2",
   },
   {
-    title: "title3",
-    text: "text3",
+    title: "FAQ_subtitle-3",
+    text: "FAQ_text-3",
+  },
+  {
+    title: "FAQ_subtitle-4",
+    text: "FAQ_text-4",
+  },
+  {
+    title: "FAQ_subtitle-5",
+    text: "FAQ_text-5",
+  },
+  {
+    title: "FAQ_subtitle-6",
+    text: "FAQ_text-6",
   },
 ];
 
 export const ourTeamData = [
   {
     title: "CEO",
-    name: "Polonuer Lev",
+    name: "Team_card_title-1",
     email: "Polonuer@pepper.partners",
     linkedIn:
       "https://www.linkedin.com/in/lev-polonuer-873a8375?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-    photo: "",
-    description: "10 years in arbitrage traffic",
+    photo: "/images/pepper-person-card.png",
+    description: "Team_card_text-1",
   },
   {
     title: "Head of Business Development",
-    name: "Agnieszka Lisiecka",
+    name: "Team_card_title-2",
     email: "Lisiecka@pepper.partners",
     linkedIn:
       "https://www.linkedin.com/in/agnieszka-lisiecka-70b06353?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-    photo: "",
-    description: "17 years in development and technology",
+    photo: "/images/pepper-person-card.png",
+    description: "Team_card_text-2",
   },
   {
     title: "Head of Sales Department",
-    name: "Salem Daniel",
+    name: "Team_card_title-3",
     email: "Salem@pepper.partners",
     linkedIn:
       "https://www.linkedin.com/in/daniel-salem-ahmed-omer-100727193?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-    photo: "",
-    description: "10 years in marketing and technology",
+    photo: "/images/pepper-person-card.png",
+    description: "Team_card_text-3",
   },
 ];
